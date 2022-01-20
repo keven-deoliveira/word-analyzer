@@ -1,4 +1,3 @@
-from cgi import test
 def parse(document):
     wordcount = {}
     for word in document.split():
