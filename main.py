@@ -1,13 +1,33 @@
-# parse document, return dictionary of words and their count
+import sys
+
+# parse document (string), return dictionary of words and their count
 def parse(document):
-    pass
+    wordcount = {}
+    for word in document.split():
+        if word not in wordcount:
+            wordcount[word] = 1
+        else:
+            wordcount[word] += 1
+    
+    return wordcount
+
 
 # takes dictionary as input and creates histogram
 def histogram(wordcount):
     pass
 
+
 def main():
-    pass
+    wordcount = {}
+    filename = sys.argv[1]
+
+    with open(filename) as f:
+        document = f.read()
+        wordcount = parse(document)
+        f.close()
+    
+    print(wordcount)
+
 
 if __name__ == "__main__":
     main()
