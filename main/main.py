@@ -15,7 +15,7 @@ def parse(document):
 
 
 # takes dictionary as input and creates histogram // working on this still
-def histogram(wordcount):
+def barGraph(wordcount):
     plt.figure(dpi=50)
     plt.bar(wordcount.keys(), wordcount.values(), width=0.5, edgecolor='black', color='#ADD8E6')
     plt.xticks(rotation=90)
@@ -29,12 +29,12 @@ def main():
 
     try:
         filename = sys.argv[1]
-    except:
+    except BaseException:
         raise Exception("Missing filename argument: Please run again as 'python main.py [filename]'")
 
     try:
         f = open(filename)
-    except:
+    except FileNotFoundError:
         raise Exception("Unable to open file.")
     else:
         document = f.read()
@@ -42,7 +42,7 @@ def main():
         f.close()
 
     print(len(wordcount))
-    histogram(wordcount)
+    barGraph(wordcount)
 
 
 if __name__ == "__main__":
