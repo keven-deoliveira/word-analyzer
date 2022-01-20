@@ -1,5 +1,6 @@
 import sys
 
+
 # parse document (string), return dictionary of words and their count
 def parse(document):
     wordcount = {}
@@ -8,9 +9,8 @@ def parse(document):
             wordcount[word] = 1
         else:
             wordcount[word] += 1
-    
-    return wordcount
 
+    return wordcount
 
 
 # takes dictionary as input and creates histogram
@@ -26,9 +26,8 @@ def main():
         document = f.read()
         wordcount = parse(document)
         f.close()
-    
-    print(wordcount)
 
+    print(wordcount)
 
 
 if __name__ == "__main__":
