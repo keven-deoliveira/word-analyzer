@@ -12,6 +12,7 @@ def parse(document):
     return wordcount
 
 
+
 # takes dictionary as input and creates histogram
 def histogram(wordcount):
     pass
@@ -27,6 +28,7 @@ def main():
         f.close()
     
     print(wordcount)
+
 
 
 if __name__ == "__main__":
