@@ -13,5 +13,5 @@ test_str = "hello hello hello\nhello testing test test\ntest\ntest"
 
 
 def test_parse():
-    assert parse(test_str) is not None  # should not be empty / should return something
-    assert isinstance(parse(test_str), dict) # should be a dictionary
+    assert parse(test_str) is not None  #should not be empty / should return something
+    assert isinstance(parse(test_str), dict)    #should be a dictionary
