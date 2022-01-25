@@ -16,7 +16,7 @@ def parse(document):
 
 # takes dictionary as input and creates histogram // working on this still
 def barGraph(wordcount):
-    plt.figure(dpi=50)
+    plt.figure(dpi=80)
     plt.bar(wordcount.keys(), wordcount.values(), width=0.5, edgecolor='black', color='#ADD8E6')
     plt.xticks(rotation=90)
     plt.xlabel("Word", fontweight='bold')
