@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 def parse(document):
     wordcount = {}
 
+    # with NLTK, might have to replace ' with a space or something
     NLTK = ["i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours", "yourself", "yourselves", "he", "him", "his", 
     "himself", "she", "her", "hers", "herself", "it", "its", "itself", "they", "them", "their", "theirs", "themselves", "what", "which", 
     "who", "whom", "this", "that", "these", "those", "am", "is", "are", "was", "were", "be", "been", "being", "have", "has", "had", 
@@ -16,12 +17,12 @@ def parse(document):
     "too", "very", "s", "t", "can", "will", "just", "don", "should", "now"]
 
     for word in document.split():
-        if (word not in wordcount) and (word not in NLTK):
+        if word in NLTK:
+            continue
+        elif word not in wordcount:
             wordcount[word] = 1
-        elif word not in NLTK:
-            wordcount[word] += 1
         else:
-            pass
+            wordcount[word] += 1
 
     return wordcount
 
