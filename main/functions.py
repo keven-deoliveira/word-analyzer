@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+
+
 def checkNLTK(word):
     NLTK = ["i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours",
             "yourself", "yourselves", "he", "him", "his", "himself", "she", "her", "hers", "herself",
