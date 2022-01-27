@@ -12,7 +12,12 @@ def parse(document):
     "too", "very", "s", "t", "can", "will", "just", "don", "should", "now"]
 
     for word in document.split():
-        if word in NLTK:
+        if "'" in word:
+            word = word.replace("'", " ")
+
+        word_split = word.split()  # words with apostrophe separated by whitespace, now put into indexable structure to check NLTK
+        
+        if word_split[0] in NLTK:
             continue
         elif word not in wordcount:
             wordcount[word] = 1
@@ -22,12 +27,13 @@ def parse(document):
     return wordcount
 
 
-test_str = "hello hello\nhello test test\ntest me me me me me again"
+test_str = "hello hello\nhello test test\ntest me me me me me again don't"
 
 
 def test_parse():
     wordcount = parse(test_str)
     assert wordcount is not None  # should not be empty / should return something
     assert isinstance(wordcount, dict)  # should return a dictionary
-    assert "me" not in wordcount  # NLTK works should not be in dictionary
-    assert "again" not in wordcount  # NLTK works should not be in dictionary
+    assert "me" not in wordcount  # NLTK words should not be in dictionary
+    assert "again" not in wordcount  # NLTK words should not be in dictionary
+    assert "don't" not in wordcount  # NLTK word checking, this time with apostrophes
