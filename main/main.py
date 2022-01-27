@@ -59,9 +59,12 @@ def main():
         wordcount = parse(document)
         f.close()
 
-    print(wordcount)
-    print(len(wordcount))
-    # barGraph(wordcount)
+    if wordcount:
+        print(wordcount)
+        print(len(wordcount))
+        barGraph(wordcount)
+    else:
+        print("Empty document.")
 
 
 if __name__ == "__main__":
