@@ -17,7 +17,12 @@ def parse(document):
     "too", "very", "s", "t", "can", "will", "just", "don", "should", "now"]
 
     for word in document.split():
-        if word in NLTK:
+        if "'" in word:
+            word = word.replace("'", " ")
+
+        word_split = word.split()  # words with apostrophe separated by whitespace, now put into indexable structure to check NLTK
+        
+        if word_split[0] in NLTK:
             continue
         elif word not in wordcount:
             wordcount[word] = 1
@@ -54,8 +59,9 @@ def main():
         wordcount = parse(document)
         f.close()
 
+    print(wordcount)
     print(len(wordcount))
-    barGraph(wordcount)
+    # barGraph(wordcount)
 
 
 if __name__ == "__main__":
