@@ -1,5 +1,4 @@
 import sys
-import matplotlib.pyplot as plt
 from functions import parse, barGraph
 
 
@@ -21,8 +20,6 @@ def main():
         f.close()
 
     if wordcount:
-        print(wordcount)
-        print(len(wordcount))
         barGraph(wordcount)
     else:
         print("Empty document.")
