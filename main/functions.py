@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from string import punctuation
 
 
+# scrubs word for special characters, removes them
 def scrub(word):
     copy = word
     special_chars = list(punctuation)
@@ -13,6 +14,7 @@ def scrub(word):
     return copy
 
 
+# checks if word is in the NLTK list, returns True if yes
 def checkNLTK(word):
     NLTK = ["i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours",
             "yourself", "yourselves", "he", "him", "his", "himself", "she", "her", "hers", "herself",
