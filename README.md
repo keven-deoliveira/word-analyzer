@@ -5,8 +5,6 @@ The objectives of this project are to practice Continuous Integration and Develo
 to practice using unit tests,
 and to practice instrumentation.
 
-Exercise Application Mission: Document Analysis
-
 User Stories:
 
 - Read a document (i.e. text file)
@@ -15,3 +13,25 @@ User Stories:
   - Read PDFs or HTML pages
   - Remove NLTK stop words from count
   - Display histogram
+
+___
+
+# Required Dependencies
+
+This script makes use of the matplotlib Python module. To install, simply run:
+
+```
+pip install matplotlib
+```
+___
+
+# Running The Application
+
+The main module can be ran using the following command line command:
+
+```
+python main.py [FILENAME]
+```
+
+Replacing [FILENAME] with desired .txt file. Running Python script may vary on systems depending on Python version.
+
